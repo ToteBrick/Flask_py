@@ -11,6 +11,10 @@ def index():
 def user(username, age=20):
     return username + ''
 
+@app.route('/usepath/<path:name>/', methods=['GET', 'POST'])
+def use_path(name):
+    return str(name)
+
 
 if __name__ == '__main__':
     app.run()
