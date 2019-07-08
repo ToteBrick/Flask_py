@@ -1,6 +1,4 @@
 import json
-
-
 from flask import Flask
 
 app = Flask(__name__, static_url_path='/s', static_folder='static')  # 静态目录默认static
@@ -16,7 +14,7 @@ def b():
     return b
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     # rules_iterator = app.url_map.iter_rules()
     rules_iterator = app.url_map.iter_rules(endpoint='a')  # 遍历时指定特定路由视图函数
