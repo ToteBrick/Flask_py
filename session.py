@@ -24,3 +24,13 @@ def get_session():
     # 获取session
     username = session.get('user', None)
     return 'username is {}.'.format(username)
+
+# 删除session
+@app.route('/delete')
+def del_session():
+    session.pop("user", None)
+    return "delete session ok."
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
