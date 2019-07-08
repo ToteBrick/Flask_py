@@ -21,5 +21,13 @@ def resp_cookie():
     return resp
 
 
+# 删除cookie
+@app.route('/delete_cookie')
+def delete_cookie():
+    response = make_response('hello world')
+    response.delete_cookie('username')
+    return response
+
+
 if __name__ == '__main__':
     app.run()
